@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-10-13T06:59:40Z" product-name="simple_instagram">
+		<header/>
+		<body>
+			<trans-unit id="tx_simple_instagram_instafeed.name">
+				<source>Instagram Feed</source>
+			</trans-unit>
+			<trans-unit id="tx_simple_instagram_instafeed.description">
+				<source>Shows your Instagram Feed</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

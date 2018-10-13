@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Feed</title>
+</head>
+<body>
+Zeig den Instafeed
+<div class="container-fluid">
+    <div class="row">
+        <f:for each="{entries}" as="entry">
+            <div class="col-xs-12 col-md-4" style="padding: 0;">
+                    <f:link.external uri="{entry.link}" target="_blank">
+                    <img src="{entry.images.standard_resolution.url}" class="card-img-top"/>
+                    </f:link.external>
+                <div  style="background: #efefef; padding: 10px 0 10px 10px; color: #333;">
+                        <strong>Likes {entry.likes.count} / Comments {entry.comments.count}</strong>
+                        <!--<p class="card-text">{entry.caption.text}</p>-->
+                </div>
+            </div>
+    </f:for>
+</div>
+</div>
+</body>
+</html>
+
+

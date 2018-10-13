@@ -1,0 +1,31 @@
+{
+    "name": "pixelink/simple-instagram",
+    "type": "typo3-cms-extension",
+    "description": "Shows a Instagram feed with a given access Token",
+    "authors": [
+        {
+            "name": "Benjamin Riezler",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1",
+        "vinkla/instagram": "^9.0",
+        "php-http/message": "^1.7",
+        "php-http/guzzle6-adapter": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pixelink\\SimpleInstagram\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pixelink\\SimpleInstagram\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "simple_instagram": "self.version",
+        "typo3-ter/simple-instagram": "self.version"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "Shows a Instagram feed with a given access Token",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 9.5.0-9.5.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "beta",
+            "targetVersion": "9.5.0-9.5.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "simple_instagram",
+        "name": "Simple Instagram",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "Pixel Ink",
+                "email": "b.riezler@pixel-ink.de",
+                "name": "Benjamin Riezler",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Instagram => showFeed",
+                    "noncacheableActions": "Instagram => showFeed",
+                    "switchableActions": ""
+                },
+                "description": "Shows your Instagram Feed",
+                "key": "instafeed",
+                "name": "Instagram Feed"
+            }
+        ],
+        "vendorName": "Pixelink"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2018-10-13 06:59",
+        "extension_builder_version": "9.10.0",
+        "be_user": " (1)"
+    }
+}
