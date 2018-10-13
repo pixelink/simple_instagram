@@ -8,8 +8,8 @@ plugin.tx_simpleinstagram_instafeed {
         # cat=plugin.tx_simpleinstagram_instafeed/file; type=string; label=Path to template layouts (FE)
         layoutRootPath = EXT:simple_instagram/Resources/Private/Layouts/
     }
-    persistence {
-        # cat=plugin.tx_simpleinstagram_instafeed//a; type=string; label=Default storage PID
-        storagePid =
+    settings {
+        #cat=plugin.tx_simpleinstagram_instafeed/settings; type=string; label=Instagram Access Token
+        accessToken = set your token
     }
 }

@@ -27,6 +27,7 @@ namespace Pixelink\SimpleInstagram\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use function Couchbase\defaultDecoder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -41,15 +42,19 @@ class InstagramController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionContro
     protected $instagramRepository = null;
 
 
+    /**
+     * InstagramController constructor.
+     */
     public function __construct()
     {
         $objectManager = GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Object\ObjectManager');
         $this->instagramRepository = $objectManager->get('Pixelink\SimpleInstagram\Domain\Repository\InstagramRepository');
     }
 
-
+    /**
+     * show media feeds limited to 20 images by insta api
+     */
     public function showFeedAction() {
-
         $entries = $this->instagramRepository->getMedia();
         $this->view->assign('entries', $entries);
     }
