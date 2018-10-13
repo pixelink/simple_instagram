@@ -1,7 +1,7 @@
 {
     "name": "pixelink/simple-instagram",
     "type": "typo3-cms-extension",
-    "description": "Shows a Instagram feed with a given access Token",
+    "description": "TYPO3 CMS Extension wich shows an Instagram feed. Instagram access token needed",
     "authors": [
         {
             "name": "Benjamin Riezler",
