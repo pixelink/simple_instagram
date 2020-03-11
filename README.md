@@ -4,11 +4,11 @@ Add image feed of your instagram account to your TYPO3 page.
 
 
 ## Installation
-Install Extension via TER or composer.
+Due to lack of dependency management of TER extenisons only composer Installation is supported
 
 **TER installation**
 
-[TYPO3 TER](https://extensions.typo3.org)
+> Will result in an Exception as required Classes will not be found
 
 **Composer installation**
 

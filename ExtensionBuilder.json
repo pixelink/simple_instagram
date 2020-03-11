@@ -13,7 +13,7 @@
             "sourceLanguage": "en",
             "state": "beta",
             "targetVersion": "9.5.0-9.5.99",
-            "version": "1.0.0"
+            "version": "1.0.3"
         },
         "extensionKey": "simple_instagram",
         "name": "Simple Instagram",
