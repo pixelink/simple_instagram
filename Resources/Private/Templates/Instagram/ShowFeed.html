@@ -11,11 +11,11 @@ Zeig den Instafeed
         <f:for each="{entries}" as="entry">
             <div class="col-xs-12 col-md-4" style="padding: 0;">
                     <f:link.external uri="{entry.link}" target="_blank">
-                    <img src="{entry.images.standard_resolution.url}" class="card-img-top"/>
+                    <img src="{entry.thumbnailSrc}" class="card-img-top"/>
                     </f:link.external>
                 <div  style="background: #efefef; padding: 10px 0 10px 10px; color: #333;">
-                        <strong>Likes {entry.likes.count} / Comments {entry.comments.count}</strong>
-                        <!--<p class="card-text">{entry.caption.text}</p>-->
+                        <strong>Likes {entry.likes} / Comments {entry.comments}</strong>
+                        <!--<p class="card-text">{entry.caption}</p>-->
                 </div>
             </div>
     </f:for>

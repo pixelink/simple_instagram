@@ -12,8 +12,8 @@
             "skipGenerateDocumentationTemplate": false,
             "sourceLanguage": "en",
             "state": "beta",
-            "targetVersion": "9.5.0-9.5.99",
-            "version": "1.0.3"
+            "targetVersion": "10.3.0-10.3.99",
+            "version": "2.0.0"
         },
         "extensionKey": "simple_instagram",
         "name": "Simple Instagram",

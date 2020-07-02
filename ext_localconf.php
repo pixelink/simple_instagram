@@ -45,3 +45,7 @@ call_user_func(
 		
     }
 );
+
+if (!is_array($GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['simple_instagram_cache'])) {
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['caching']['cacheConfigurations']['simple_instagram_cache'] = [];
+}

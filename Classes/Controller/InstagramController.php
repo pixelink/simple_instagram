@@ -1,4 +1,5 @@
 <?php
+
 namespace Pixelink\SimpleInstagram\Controller;
 
 
@@ -6,7 +7,7 @@ namespace Pixelink\SimpleInstagram\Controller;
  *
  *  Copyright notice
  *
- *  (c) 2014 Alex Bigott <support@pixel-ink.de>, Pixel Ink
+ *  (c) 2014 Benjamin Riezler <support@pixel-ink.de>, Pixel Ink
  *
  *  All rights reserved
  *
@@ -27,36 +28,74 @@ namespace Pixelink\SimpleInstagram\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use function Couchbase\defaultDecoder;
+use TYPO3\CMS\Core\Cache\CacheManager;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * AnswerController
+ * InstagramController
  */
-class InstagramController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class InstagramController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
+    /*
+     * string cacheKey
+     */
+    protected $cacheKey = 'simpleInstagram';
 
     /**
-     * @var \Pixelink\SimpleInstagram\Domain\Repository\InstagramRepository
+     * Default cache live time is 24h
+     *
+     * @var int
+     */
+    protected $cacheLifeTime = 86400;
+    /**
+     * @var InstagramRepository
      */
     protected $instagramRepository = null;
 
+    /**
+     * @var CacheManager
+     */
+    private $cache;
 
     /**
      * InstagramController constructor.
      */
     public function __construct()
     {
+        $this->cache = GeneralUtility::makeInstance(CacheManager::class)->getCache('simple_instagram_cache');
         $objectManager = GeneralUtility::makeInstance('TYPO3\CMS\Extbase\Object\ObjectManager');
         $this->instagramRepository = $objectManager->get('Pixelink\SimpleInstagram\Domain\Repository\InstagramRepository');
     }
 
     /**
-     * show media feeds limited to 20 images by insta api
+     * show media feeds 
      */
-    public function showFeedAction() {
+    public function showFeedAction()
+    {
         $entries = $this->instagramRepository->getMedia();
+        $this->getCachedMagic($entries);
         $this->view->assign('entries', $entries);
+    }
+
+    public function getCachedMagic($entry)
+    {
+        $cacheIdentifier = $this->getCacheIdentifier();
+
+        // If $entry is null, it hasn't been cached. Calculate the value and store it in the cache:
+        if (($entry = $this->cache->get($cacheIdentifier)) === false) {
+            // Save value in cache
+            $this->cache->set($cacheIdentifier, $entry, [$this->cacheKey], $this->cacheLifeTime);
+        }
+        return $entry;
+    }
+
+    /**
+     * return string
+     */
+    public function getCacheIdentifier(): string
+    {
+        return sha1($this->cacheKey);
     }
 
 }

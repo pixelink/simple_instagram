@@ -9,7 +9,11 @@ plugin.tx_simpleinstagram_instafeed {
         layoutRootPath = EXT:simple_instagram/Resources/Private/Layouts/
     }
     settings {
-        #cat=plugin.tx_simpleinstagram_instafeed/settings; type=string; label=Instagram Access Token
-        accessToken = set your token
+        #cat=plugin.tx_simpleinstagram_instafeed/settings; type=string; label=Instagram username
+        username = your insta username
+        #cat=plugin.tx_simpleinstagram_instafeed/settings; type=string; label=Instagram password
+        password = your insta password
+        #cat=plugin.tx_simpleinstagram_instafeed/settings; type=string; label=Instagram account to show
+        instaAccount = insta account name you like to show
     }
 }

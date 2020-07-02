@@ -9,6 +9,8 @@ plugin.tx_simpleinstagram_instafeed {
         layoutRootPaths.1 = {$plugin.tx_simpleinstagram_instafeed.view.layoutRootPath}
     }
     settings {
-        accessToken = {$plugin.tx_simpleinstagram_instafeed.settings.accessToken}
+        username = {$plugin.tx_simpleinstagram_instafeed.settings.username}
+        password = {$plugin.tx_simpleinstagram_instafeed.settings.password}
+        instaAccount = {$plugin.tx_simpleinstagram_instafeed.settings.instaAccount}
     }
 }
